@@ -41,7 +41,7 @@ popd
 echo -e "\n >>>>> download gcc done [2/11] <<<<< \n"
 
 
-echo ">>>>> download gcc <<<<<"
+echo ">>>>> download glibc <<<<<"
 cat >>.git/config <<EOF
 [submodule "glibc"]
 	active = true
@@ -167,10 +167,11 @@ echo ">>>>> download llvm <<<<<"
 cat >>.git/config <<EOF
 [submodule "llvm"]
 	active = true
-	url = https://mirror.iscas.ac.cn/riscv-toolchains/git/riscv-collab/riscv-gnu-toolchain/llvm.git
+	url = https://mirrors.tuna.tsinghua.edu.cn/git/llvm-project.git
 EOF
 mkdir -p llvm
-git clone https://mirror.iscas.ac.cn/riscv-toolchains/git/riscv-collab/riscv-gnu-toolchain/llvm.git llvm
+# git clone https://mirror.iscas.ac.cn/riscv-toolchains/git/riscv-collab/riscv-gnu-toolchain/llvm.git llvm
+git clone https://mirrors.tuna.tsinghua.edu.cn/git/llvm-project.git llvm
 git submodule init llvm
 git submodule update llvm
 pushd llvm
